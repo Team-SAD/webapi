@@ -25,5 +25,20 @@ jobs:
       - run: dotnet-sonarscanner begin -k:'Team-SAD_webapi' -o:'team-sad' -d:sonar.login=$SONAR_TOKEN -d:sonar.host.url='https://sonarcloud.io'
       - run: dotnet build
       - run: dotnet-sonarscanner end -d:sonar.login=$SONAR_TOKEN
+  
+  package:
+    env:
+      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+      DOCKER_USER: ${{ secrets.DOCKER_USER }}
+    needs:
+      - analyze
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker image build -f Dockerfile -t webapi .
+      - run: docker image tag webapi planner123/webapi
+      - run: echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
+      - run: docker push planner123/webapi
+      - run: docker logout
 name: ci-pipeline
 on: push   
