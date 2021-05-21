@@ -27,15 +27,27 @@ namespace Planner.Client
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddScoped<UnitOfWork>();
             services.AddControllers();
+            services.AddDbContext<CPContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("mssql"));
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Planner.Client", Version = "v1" });
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("public", config => 
+                {
+                    config.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, CPContext context)
         {
             if (env.IsDevelopment())
             {
