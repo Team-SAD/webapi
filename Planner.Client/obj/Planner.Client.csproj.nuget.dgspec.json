@@ -1,0 +1,194 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/drayh/revature/project_two/webapi/Planner.Client/Planner.Client.csproj": {}
+  },
+  "projects": {
+    "/home/drayh/revature/project_two/webapi/Planner.Client/Planner.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/drayh/revature/project_two/webapi/Planner.Client/Planner.Client.csproj",
+        "projectName": "Planner.Client",
+        "projectPath": "/home/drayh/revature/project_two/webapi/Planner.Client/Planner.Client.csproj",
+        "packagesPath": "/home/drayh/.nuget/packages/",
+        "outputPath": "/home/drayh/revature/project_two/webapi/Planner.Client/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/drayh/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/drayh/revature/project_two/webapi/Planner.Domain/Planner.Domain.csproj": {
+                "projectPath": "/home/drayh/revature/project_two/webapi/Planner.Domain/Planner.Domain.csproj"
+              },
+              "/home/drayh/revature/project_two/webapi/Planner.Storage/Planner.Storage.csproj": {
+                "projectPath": "/home/drayh/revature/project_two/webapi/Planner.Storage/Planner.Storage.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "microsoft.entityframeworkcore.design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "microsoft.entityframeworkcore.sqlserver": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/drayh/revature/project_two/webapi/Planner.Domain/Planner.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/drayh/revature/project_two/webapi/Planner.Domain/Planner.Domain.csproj",
+        "projectName": "Planner.Domain",
+        "projectPath": "/home/drayh/revature/project_two/webapi/Planner.Domain/Planner.Domain.csproj",
+        "packagesPath": "/home/drayh/.nuget/packages/",
+        "outputPath": "/home/drayh/revature/project_two/webapi/Planner.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/drayh/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/drayh/revature/project_two/webapi/Planner.Storage/Planner.Storage.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/drayh/revature/project_two/webapi/Planner.Storage/Planner.Storage.csproj",
+        "projectName": "Planner.Storage",
+        "projectPath": "/home/drayh/revature/project_two/webapi/Planner.Storage/Planner.Storage.csproj",
+        "packagesPath": "/home/drayh/.nuget/packages/",
+        "outputPath": "/home/drayh/revature/project_two/webapi/Planner.Storage/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/drayh/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/drayh/revature/project_two/webapi/Planner.Domain/Planner.Domain.csproj": {
+                "projectPath": "/home/drayh/revature/project_two/webapi/Planner.Domain/Planner.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
