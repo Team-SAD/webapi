@@ -1,0 +1,12 @@
+using Planner.Domain.Abstracts;
+
+namespace Planner.Domain.Models
+{
+    public class Location : Entity
+    {
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zipcode { get; set; }
+    }
+}
