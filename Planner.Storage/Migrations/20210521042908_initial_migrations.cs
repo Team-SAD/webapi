@@ -69,9 +69,9 @@ namespace Planner.Storage.Migrations
                 columns: new[] { "EntityId", "Discription", "EndDate", "StartDate" },
                 values: new object[,]
                 {
-                    { 1L, "First event", new DateTime(2021, 5, 21, 1, 4, 4, 516, DateTimeKind.Local).AddTicks(1330), new DateTime(2021, 5, 21, 0, 4, 4, 493, DateTimeKind.Local).AddTicks(1780) },
-                    { 2L, "Second event", new DateTime(2021, 5, 21, 2, 4, 4, 516, DateTimeKind.Local).AddTicks(4870), new DateTime(2021, 5, 21, 0, 4, 4, 516, DateTimeKind.Local).AddTicks(4070) },
-                    { 3L, "Third event", new DateTime(2021, 5, 21, 3, 4, 4, 516, DateTimeKind.Local).AddTicks(4900), new DateTime(2021, 5, 21, 0, 4, 4, 516, DateTimeKind.Local).AddTicks(4900) }
+                    { 1L, "First event", new DateTime(2021, 5, 21, 1, 29, 7, 556, DateTimeKind.Local).AddTicks(8800), new DateTime(2021, 5, 21, 0, 29, 7, 533, DateTimeKind.Local).AddTicks(9380) },
+                    { 2L, "Second event", new DateTime(2021, 5, 21, 2, 29, 7, 557, DateTimeKind.Local).AddTicks(2380), new DateTime(2021, 5, 21, 0, 29, 7, 557, DateTimeKind.Local).AddTicks(1560) },
+                    { 3L, "Third event", new DateTime(2021, 5, 21, 3, 29, 7, 557, DateTimeKind.Local).AddTicks(2410), new DateTime(2021, 5, 21, 0, 29, 7, 557, DateTimeKind.Local).AddTicks(2400) }
                 });
         }
 

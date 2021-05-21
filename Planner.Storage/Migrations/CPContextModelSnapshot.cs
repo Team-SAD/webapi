@@ -86,22 +86,22 @@ namespace Planner.Storage.Migrations
                         {
                             EntityId = 1L,
                             Discription = "First event",
-                            EndDate = new DateTime(2021, 5, 21, 1, 4, 4, 516, DateTimeKind.Local).AddTicks(1330),
-                            StartDate = new DateTime(2021, 5, 21, 0, 4, 4, 493, DateTimeKind.Local).AddTicks(1780)
+                            EndDate = new DateTime(2021, 5, 21, 1, 29, 7, 556, DateTimeKind.Local).AddTicks(8800),
+                            StartDate = new DateTime(2021, 5, 21, 0, 29, 7, 533, DateTimeKind.Local).AddTicks(9380)
                         },
                         new
                         {
                             EntityId = 2L,
                             Discription = "Second event",
-                            EndDate = new DateTime(2021, 5, 21, 2, 4, 4, 516, DateTimeKind.Local).AddTicks(4870),
-                            StartDate = new DateTime(2021, 5, 21, 0, 4, 4, 516, DateTimeKind.Local).AddTicks(4070)
+                            EndDate = new DateTime(2021, 5, 21, 2, 29, 7, 557, DateTimeKind.Local).AddTicks(2380),
+                            StartDate = new DateTime(2021, 5, 21, 0, 29, 7, 557, DateTimeKind.Local).AddTicks(1560)
                         },
                         new
                         {
                             EntityId = 3L,
                             Discription = "Third event",
-                            EndDate = new DateTime(2021, 5, 21, 3, 4, 4, 516, DateTimeKind.Local).AddTicks(4900),
-                            StartDate = new DateTime(2021, 5, 21, 0, 4, 4, 516, DateTimeKind.Local).AddTicks(4900)
+                            EndDate = new DateTime(2021, 5, 21, 3, 29, 7, 557, DateTimeKind.Local).AddTicks(2410),
+                            StartDate = new DateTime(2021, 5, 21, 0, 29, 7, 557, DateTimeKind.Local).AddTicks(2400)
                         });
                 });
 
