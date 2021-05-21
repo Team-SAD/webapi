@@ -10,7 +10,7 @@ using Planner.Storage;
 namespace Planner.Storage.Migrations
 {
     [DbContext(typeof(CPContext))]
-    [Migration("20210521042908_initial_migrations")]
+    [Migration("20210521044406_initial_migrations")]
     partial class initial_migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,22 +88,22 @@ namespace Planner.Storage.Migrations
                         {
                             EntityId = 1L,
                             Discription = "First event",
-                            EndDate = new DateTime(2021, 5, 21, 1, 29, 7, 556, DateTimeKind.Local).AddTicks(8800),
-                            StartDate = new DateTime(2021, 5, 21, 0, 29, 7, 533, DateTimeKind.Local).AddTicks(9380)
+                            EndDate = new DateTime(2021, 5, 21, 1, 44, 5, 492, DateTimeKind.Local).AddTicks(9170),
+                            StartDate = new DateTime(2021, 5, 21, 0, 44, 5, 469, DateTimeKind.Local).AddTicks(9210)
                         },
                         new
                         {
                             EntityId = 2L,
                             Discription = "Second event",
-                            EndDate = new DateTime(2021, 5, 21, 2, 29, 7, 557, DateTimeKind.Local).AddTicks(2380),
-                            StartDate = new DateTime(2021, 5, 21, 0, 29, 7, 557, DateTimeKind.Local).AddTicks(1560)
+                            EndDate = new DateTime(2021, 5, 21, 2, 44, 5, 493, DateTimeKind.Local).AddTicks(2990),
+                            StartDate = new DateTime(2021, 5, 21, 0, 44, 5, 493, DateTimeKind.Local).AddTicks(2010)
                         },
                         new
                         {
                             EntityId = 3L,
                             Discription = "Third event",
-                            EndDate = new DateTime(2021, 5, 21, 3, 29, 7, 557, DateTimeKind.Local).AddTicks(2410),
-                            StartDate = new DateTime(2021, 5, 21, 0, 29, 7, 557, DateTimeKind.Local).AddTicks(2400)
+                            EndDate = new DateTime(2021, 5, 21, 3, 44, 5, 493, DateTimeKind.Local).AddTicks(3020),
+                            StartDate = new DateTime(2021, 5, 21, 0, 44, 5, 493, DateTimeKind.Local).AddTicks(3010)
                         });
                 });
 

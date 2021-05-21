@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Planner.Storage;
 
@@ -15,9 +16,9 @@ namespace Planner.Client.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetCustomers()
+        public async Task<IActionResult> GetCustomers()
         {
-            var customers = _unitOfWork.Customers.SelectCustomersAsync();
+            var customers = await _unitOfWork.Customers.SelectCustomersAsync();
 
             return Ok(customers);
         }

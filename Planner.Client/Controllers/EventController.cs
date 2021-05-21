@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Planner.Storage;
 
@@ -14,9 +15,9 @@ namespace Planner.Client.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetEvents()
+        public async Task<IActionResult> GetEvents()
         {
-            var events = _unitOfWork.Events.SelectEventsAsync();
+            var events = await _unitOfWork.Events.SelectEventsAsync();
             return Ok(events);
         }
         
