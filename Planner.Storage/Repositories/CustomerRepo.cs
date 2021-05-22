@@ -18,7 +18,8 @@ namespace Planner.Storage.Repositories
 
         public bool Create(Customer entry)
         {
-            throw new NotImplementedException();
+            _context.Customers.Add(entry);
+            return true;
         }
 
         public bool Delete()
@@ -29,9 +30,9 @@ namespace Planner.Storage.Repositories
         {
             return await _context.Customers.ToListAsync();
         }
-        public IEnumerable<Customer>  Read(Func<Customer, bool> filter)
+        public  IEnumerable<Customer>  Read(Func<Customer, bool> filter)
         {
-            return _context.Customers.Where(filter).ToList();
+            return  _context.Customers.Where(filter).ToList();
         }
 
         public Customer Update()

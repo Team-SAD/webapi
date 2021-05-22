@@ -40,5 +40,19 @@ jobs:
       - run: echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
       - run: docker push planner123/webapi
       - run: docker logout
+
+  deploy:
+    needs:
+      - package
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - uses: azure/webapps-deploy@v2
+        with:
+          app-name: PlannerSp
+          images: planner123/webapi
+    
 name: ci-pipeline
 on: push   
