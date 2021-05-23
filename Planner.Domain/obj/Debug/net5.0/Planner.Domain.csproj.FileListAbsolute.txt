@@ -1,0 +1,12 @@
+/home/drayh/revature/project_two/webapi/Planner.Domain/bin/Debug/net5.0/Planner.Domain.deps.json
+/home/drayh/revature/project_two/webapi/Planner.Domain/bin/Debug/net5.0/Planner.Domain.dll
+/home/drayh/revature/project_two/webapi/Planner.Domain/bin/Debug/net5.0/ref/Planner.Domain.dll
+/home/drayh/revature/project_two/webapi/Planner.Domain/bin/Debug/net5.0/Planner.Domain.pdb
+/home/drayh/revature/project_two/webapi/Planner.Domain/obj/Debug/net5.0/Planner.Domain.csprojAssemblyReference.cache
+/home/drayh/revature/project_two/webapi/Planner.Domain/obj/Debug/net5.0/Planner.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/drayh/revature/project_two/webapi/Planner.Domain/obj/Debug/net5.0/Planner.Domain.AssemblyInfoInputs.cache
+/home/drayh/revature/project_two/webapi/Planner.Domain/obj/Debug/net5.0/Planner.Domain.AssemblyInfo.cs
+/home/drayh/revature/project_two/webapi/Planner.Domain/obj/Debug/net5.0/Planner.Domain.csproj.CoreCompileInputs.cache
+/home/drayh/revature/project_two/webapi/Planner.Domain/obj/Debug/net5.0/Planner.Domain.dll
+/home/drayh/revature/project_two/webapi/Planner.Domain/obj/Debug/net5.0/ref/Planner.Domain.dll
+/home/drayh/revature/project_two/webapi/Planner.Domain/obj/Debug/net5.0/Planner.Domain.pdb

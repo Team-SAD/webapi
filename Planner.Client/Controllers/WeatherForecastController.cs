@@ -9,7 +9,6 @@ namespace Planner.Client.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [EnableCors("public")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

@@ -1596,7 +1596,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Planner.Domain": "1.0.0"
+          "Planner.Domain": "1.0.0",
+          "microsoft.entityframeworkcore.sqlserver": "5.0.6"
         },
         "compile": {
           "bin/placeholder/Planner.Storage.dll": {}
