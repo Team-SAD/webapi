@@ -5,10 +5,8 @@ using Planner.Storage;
 
 namespace Planner.Client.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    [EnableCors("public")]
-    public class CustomerController : ControllerBase
+
+    public class CustomerController : ApiBaseController
     {
         private readonly UnitOfWork _unitOfWork;
         public CustomerController(UnitOfWork unitOfWork)

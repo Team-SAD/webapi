@@ -4,9 +4,8 @@ using Planner.Storage;
 
 namespace Planner.Client.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class EventController : ControllerBase
+    
+    public class EventController : ApiBaseController
     {
         private readonly UnitOfWork _unitOfWork;
         public EventController(UnitOfWork unitOfWork)

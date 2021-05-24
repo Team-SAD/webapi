@@ -16,10 +16,10 @@ namespace Planner.Storage.Repositories
             _context = context;
         }
 
-        public bool Create(Customer entry)
+        public async void Create(Customer entry)
         {
-            _context.Customers.Add(entry);
-            return true;
+            await _context.Customers.AddAsync(entry);
+           
         }
 
         public bool Delete()
@@ -29,6 +29,11 @@ namespace Planner.Storage.Repositories
         public async Task<IEnumerable<Customer>> SelectCustomersAsync()
         {
             return await _context.Customers.ToListAsync();
+        }
+
+        public async Task<Customer> GetCustomerByName(string name)
+        {
+            return await _context.Customers.SingleOrDefaultAsync(x => x.Name == name);
         }
         public  IEnumerable<Customer>  Read(Func<Customer, bool> filter)
         {

@@ -1,10 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Planner.Storage.Migrations
 {
-    public partial class initial_migrations : Migration
+    public partial class sqlserveradded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,8 +12,8 @@ namespace Planner.Storage.Migrations
                 columns: table => new
                 {
                     EntityId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: true)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -26,10 +25,10 @@ namespace Planner.Storage.Migrations
                 columns: table => new
                 {
                     EntityId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Discription = table.Column<string>(type: "text", nullable: true),
-                    StartDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Discription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,11 +40,11 @@ namespace Planner.Storage.Migrations
                 columns: table => new
                 {
                     EntityId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Street = table.Column<string>(type: "text", nullable: true),
-                    City = table.Column<string>(type: "text", nullable: true),
-                    State = table.Column<string>(type: "text", nullable: true),
-                    Zipcode = table.Column<string>(type: "text", nullable: true)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Zipcode = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -69,9 +68,9 @@ namespace Planner.Storage.Migrations
                 columns: new[] { "EntityId", "Discription", "EndDate", "StartDate" },
                 values: new object[,]
                 {
-                    { 1L, "First event", new DateTime(2021, 5, 21, 1, 44, 5, 492, DateTimeKind.Local).AddTicks(9170), new DateTime(2021, 5, 21, 0, 44, 5, 469, DateTimeKind.Local).AddTicks(9210) },
-                    { 2L, "Second event", new DateTime(2021, 5, 21, 2, 44, 5, 493, DateTimeKind.Local).AddTicks(2990), new DateTime(2021, 5, 21, 0, 44, 5, 493, DateTimeKind.Local).AddTicks(2010) },
-                    { 3L, "Third event", new DateTime(2021, 5, 21, 3, 44, 5, 493, DateTimeKind.Local).AddTicks(3020), new DateTime(2021, 5, 21, 0, 44, 5, 493, DateTimeKind.Local).AddTicks(3010) }
+                    { 1L, "First event", new DateTime(2021, 5, 24, 13, 14, 20, 481, DateTimeKind.Local).AddTicks(9360), new DateTime(2021, 5, 24, 12, 14, 20, 458, DateTimeKind.Local).AddTicks(8000) },
+                    { 2L, "Second event", new DateTime(2021, 5, 24, 14, 14, 20, 482, DateTimeKind.Local).AddTicks(2670), new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2030) },
+                    { 3L, "Third event", new DateTime(2021, 5, 24, 15, 14, 20, 482, DateTimeKind.Local).AddTicks(2700), new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2690) }
                 });
         }
 

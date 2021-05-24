@@ -4,9 +4,8 @@ using Planner.Storage;
 
 namespace Planner.Client.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class LocationController : ControllerBase
+   
+    public class LocationController : ApiBaseController
     {
  
     

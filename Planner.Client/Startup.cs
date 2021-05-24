@@ -22,13 +22,16 @@ namespace Planner.Client
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+              
         }
-
+        
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           string connStr = Configuration["msql"];
+            
             services.AddCors(options => 
             {
                 options.AddPolicy("public", config => 
@@ -42,7 +45,8 @@ namespace Planner.Client
             services.AddControllers();
             services.AddDbContext<CPContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetConnectionString("pgsql"));
+                //options.UseNpgsql(Configuration.GetConnectionString("pgsql"));
+                options.UseSqlServer(Configuration.GetConnectionString("mssql"));
             });
             services.AddSwaggerGen(c =>
             {
