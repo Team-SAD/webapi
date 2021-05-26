@@ -11,8 +11,6 @@ namespace Planner.Storage
     public PlannerRepo Planners { get; set; }
     public LocationRepo Locations { get; set; }
 
-
-
     public UnitOfWork(CPContext context)
     {
       _context = context;

@@ -9,8 +9,11 @@ using Planner.Domain.Models;
 
 namespace Planner.Testing
 {
-  public class UnitTest1
+  public class EventTests
   {
+    public int MAX_LENGTH = 100;
+    public int MIN_LENGTH = 5;
+
     [Fact]
     public void EventTest1()
     {
@@ -43,8 +46,11 @@ namespace Planner.Testing
     {
       Event ev1 = new Event() { Description = descrip };
       Assert.NotNull(ev1.Description);
-      Assert.InRange(ev1.Description.Length, 10, 50);
+      Assert.InRange(ev1.Description.Length, 5, MAX_LENGTH);
     }
+    // End date cant before start date
+    // Start date cannot be after end date
+
 
   }
 }
