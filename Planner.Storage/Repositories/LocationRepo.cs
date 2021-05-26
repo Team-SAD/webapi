@@ -16,7 +16,7 @@ namespace Planner.Storage.Repositories
             _context = context;
         }
 
-        public  bool Create(Location entry)
+        public  void Create(Location entry)
         {
             throw new NotImplementedException();
         }

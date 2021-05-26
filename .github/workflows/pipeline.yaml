@@ -53,6 +53,6 @@ jobs:
         with:
           app-name: PlannerSp
           images: planner123/webapi
-    
+        
 name: ci-pipeline
 on: push   

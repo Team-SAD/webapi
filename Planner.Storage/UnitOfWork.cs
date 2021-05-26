@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Planner.Storage.Repositories;
 
 namespace Planner.Storage
@@ -19,9 +20,9 @@ namespace Planner.Storage
             Events = new EventRepo(_context);
             Locations = new LocationRepo(_context);
         }
-        public void Save()
+        public async Task<int> Save()
         {
-        _context.SaveChanges();
+            return await _context.SaveChangesAsync();
         }
     }
 }

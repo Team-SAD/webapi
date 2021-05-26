@@ -2,34 +2,34 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Planner.Storage;
 
 namespace Planner.Storage.Migrations
 {
     [DbContext(typeof(CPContext))]
-    [Migration("20210521044406_initial_migrations")]
-    partial class initial_migrations
+    [Migration("20210524161421_sqlserver-added")]
+    partial class sqlserveradded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 63)
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.6")
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Planner.Domain.Models.Customer", b =>
                 {
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EntityId");
 
@@ -68,16 +68,16 @@ namespace Planner.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Discription")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("EndDate")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("StartDate")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("EntityId");
 
@@ -88,22 +88,22 @@ namespace Planner.Storage.Migrations
                         {
                             EntityId = 1L,
                             Discription = "First event",
-                            EndDate = new DateTime(2021, 5, 21, 1, 44, 5, 492, DateTimeKind.Local).AddTicks(9170),
-                            StartDate = new DateTime(2021, 5, 21, 0, 44, 5, 469, DateTimeKind.Local).AddTicks(9210)
+                            EndDate = new DateTime(2021, 5, 24, 13, 14, 20, 481, DateTimeKind.Local).AddTicks(9360),
+                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 458, DateTimeKind.Local).AddTicks(8000)
                         },
                         new
                         {
                             EntityId = 2L,
                             Discription = "Second event",
-                            EndDate = new DateTime(2021, 5, 21, 2, 44, 5, 493, DateTimeKind.Local).AddTicks(2990),
-                            StartDate = new DateTime(2021, 5, 21, 0, 44, 5, 493, DateTimeKind.Local).AddTicks(2010)
+                            EndDate = new DateTime(2021, 5, 24, 14, 14, 20, 482, DateTimeKind.Local).AddTicks(2670),
+                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2030)
                         },
                         new
                         {
                             EntityId = 3L,
                             Discription = "Third event",
-                            EndDate = new DateTime(2021, 5, 21, 3, 44, 5, 493, DateTimeKind.Local).AddTicks(3020),
-                            StartDate = new DateTime(2021, 5, 21, 0, 44, 5, 493, DateTimeKind.Local).AddTicks(3010)
+                            EndDate = new DateTime(2021, 5, 24, 15, 14, 20, 482, DateTimeKind.Local).AddTicks(2700),
+                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2690)
                         });
                 });
 
@@ -112,19 +112,19 @@ namespace Planner.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("City")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("State")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Street")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Zipcode")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EntityId");
 
