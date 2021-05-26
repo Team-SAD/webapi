@@ -1,4 +1,7 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
 using Planner.Domain.Abstracts;
 using Planner.Domain.Models;
 
@@ -12,60 +15,61 @@ namespace Planner.Domain.Models
 
     public void MakeEvent()
     {
-      DateTime start = null;
-      DateTime end = null;
-      string title = "";
-      string descrip = "";
-      var newest = new Event() { StartDate = start, EndDate = end, Description = descrip, Title = title };
-      Events.add(newest);
+      // DateTime start = null;
+      // DateTime end = null;
+      // string title = "";
+      // string descrip = "";
+      // var newest = new Event() { StartDate = start, EndDate = end, Description = descrip, Title = title };
+      // Events.add(newest);
     }
 
     public void DeleteEvent()
     {
-      DisplayEvents();
-      Console.WriteLine("Which event would you like to remove?");
-      var valid = int.TryParse(Console.ReadLine(), out int input);
+      // DisplayEvents();
+      // Console.WriteLine("Which event would you like to remove?");
+      // var valid = int.TryParse(Console.ReadLine(), out int input);
 
-      if (!valid)
-      {
-        return null;
-      }
+      // if (!valid)
+      // {
+      //   return null;
+      // }
 
-      Events.remove((input + 1));
+      // Events.remove((input + 1));
     }
 
     public void ChangeEvent()
     {
-      DisplayEvents();
-      var valid = int.TryParse(Console.ReadLine(), out int input);
+      // DisplayEvents();
+      // var valid = int.TryParse(Console.ReadLine(), out int input);
 
-      if (!valid)
-      {
-        return null;
-      }
-      var toChange = Events[input];
-      Console.WriteLine(toChange.Title + "\n " + toChange.Description);
+      // if (!valid)
+      // {
+      //   return null;
+      // }
+      // var toChange = Events[input];
+      // Console.WriteLine(toChange.Title + "\n " + toChange.Description);
 
-      Console.WriteLine("Change name ");
-      toChange.Title = Console.ReadLine();
+      // Console.WriteLine("Change name ");
+      // toChange.Title = Console.ReadLine();
 
-      Console.WriteLine("Change description ");
-      string newDescrip = Console.ReadLine();
+      // Console.WriteLine("Change description ");
+      // string newDescrip = Console.ReadLine();
 
-      Console.WriteLine("Change start date ");
-      string newStart = Console.ReadLine();
+      // Console.WriteLine("Change start date ");
+      // string newStart = Console.ReadLine();
 
-      Console.WriteLine("Change end date ");
-      string newEnd = Console.ReadLine();
+      // Console.WriteLine("Change end date ");
+      // string newEnd = Console.ReadLine();
     }
 
     public void DisplayEvents()
     {
-      int i = 1;
-      foreach (var item in Events)
-      {
-        Console.Write(i + " " + item.Title);
-      }
+      // int i = 1;
+      // foreach (var item in Events)
+      // {
+      //   Console.Write(i + " " + item.Title);
+      //   i++;
+      // }
     }
 
   }
