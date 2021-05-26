@@ -10,8 +10,12 @@ namespace Planner.Domain.Models
     public int Month { get; set; }
     public List<Event> Events { get; set; }
 
-    public void MakeEvent(DateTime start, DateTime end, string title, string descrip)
+    public void MakeEvent()
     {
+      DateTime start = null;
+      DateTime end = null;
+      string title = "";
+      string descrip = "";
       var newest = new Event() { StartDate = start, EndDate = end, Description = descrip, Title = title };
       Events.add(newest);
     }
