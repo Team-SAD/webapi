@@ -8,19 +8,19 @@ using Planner.Domain.Models;
 
 namespace Planner.Storage.Repositories
 {
-  public class PlannerRepo : IRepository<Planner>
+  public class PlanRepo : IRepository<Plan>
   {
     private readonly CPContext _context;
-    public PlannerRepo(CPContext context)
+    public PlanRepo(CPContext context)
     {
       _context = context;
     }
 
-    public void Create(Planner entry)
+    public void Create(Plan entry)
     {
       throw new NotImplementedException();
     }
-    public async Task<IEnumerable<Planner>> SelectPlannersAsync()
+    public async Task<IEnumerable<Plan>> SelectPlannersAsync()
     {
       return await _context.Planners.ToListAsync();
     }
@@ -29,12 +29,12 @@ namespace Planner.Storage.Repositories
       throw new NotImplementedException();
     }
 
-    public IEnumerable<Planner> Read(Func<Planner, bool> filter)
+    public IEnumerable<Plan> Read(Func<Plan, bool> filter)
     {
       return _context.Planners.Where(filter).ToList();
     }
 
-    public Planner Update()
+    public Plan Update()
     {
       throw new NotImplementedException();
     }

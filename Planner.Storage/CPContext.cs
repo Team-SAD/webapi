@@ -8,7 +8,7 @@ namespace Planner.Storage
   {
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Event> Events { get; set; }
-    public DbSet<Planner> Planners { get; set; }
+    public DbSet<Plan> Planners { get; set; }
 
     public DbSet<Location> Locations { get; set; }
 
@@ -19,7 +19,7 @@ namespace Planner.Storage
     {
       builder.Entity<Customer>().HasKey(e => e.EntityId);
       builder.Entity<Event>().HasKey(e => e.EntityId);
-      builder.Entity<Planner>().HasKey(e => e.EntityId);
+      builder.Entity<Plan>().HasKey(e => e.EntityId);
       builder.Entity<Location>().HasKey(e => e.EntityId);
 
       OnModelSeeding(builder);

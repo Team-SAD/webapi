@@ -1,10 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using Xunit;
-using Planner.Domain.Abstracts;
-using Planner.Domain.Interfaces;
 using Planner.Domain.Models;
 
 namespace Planner.Testing
@@ -19,33 +13,18 @@ namespace Planner.Testing
     {
       Customer cs1 = new Customer();
       Assert.NotNull(cs1);
-      cs1.
-      Assert.NotNull(ev1);
     }
 
     [Theory]
-    [InlineData("Lunch with President")]
-    [InlineData("Dinner with parents")]
-    public void EventTestName(string eventName)
+    [InlineData("JLO")]
+    [InlineData("Carny Bople Davidson Jr")]
+    public void EventTestName(string csName)
     {
-      var ev = new Event() { Title = eventName };
-      Assert.NotNull(ev.Title);
-      Assert.Equal(ev.Title, ev.ToString());
-      Assert.InRange(ev.Title.Length, 5, 25);
+      var cs = new Customer() { Name = csName };
+      Assert.NotNull(cs.Name);
+      Assert.Equal(cs.Name, cs.ToString());
+      Assert.InRange(cs.Name.Length, MIN_LENGTH, MAX_LENGTH);
     }
-
-    [Theory]
-    [InlineData("Times time to wake up friend.")]
-    [InlineData("Dinner with parents, do not forget to reschedule soon")]
-    public void EventTestDescrip(string descrip)
-    {
-      Event ev1 = new Event() { Description = descrip };
-      Assert.NotNull(ev1.Description);
-      Assert.InRange(ev1.Description.Length, 5, MAX_LENGTH);
-    }
-    // End date cant before start date
-    // Start date cannot be after end date
-
 
   }
 }

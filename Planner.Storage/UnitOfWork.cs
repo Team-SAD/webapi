@@ -8,7 +8,7 @@ namespace Planner.Storage
     private readonly CPContext _context;
     public CustomerRepo Customers { get; set; }
     public EventRepo Events { get; set; }
-    public PlannerRepo Planners { get; set; }
+    public PlanRepo Plans { get; set; }
     public LocationRepo Locations { get; set; }
 
     public UnitOfWork(CPContext context)
@@ -17,7 +17,7 @@ namespace Planner.Storage
 
       Customers = new CustomerRepo(_context);
       Events = new EventRepo(_context);
-      Planners = new PlannerRepo(_context);
+      Plans = new PlanRepo(_context);
       Locations = new LocationRepo(_context);
     }
     public async Task<int> Save()

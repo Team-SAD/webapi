@@ -6,129 +6,129 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Planner.Storage;
 
-namespace Planner.Storage.Migrations
+namespace CPlanner.Storage.Migrations
 {
-    [DbContext(typeof(CPContext))]
-    partial class CPContextModelSnapshot : ModelSnapshot
+  [DbContext(typeof(CPContext))]
+  partial class CPContextModelSnapshot : ModelSnapshot
+  {
+    protected override void BuildModel(ModelBuilder modelBuilder)
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.6")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder
+          .HasAnnotation("Relational:MaxIdentifierLength", 128)
+          .HasAnnotation("ProductVersion", "5.0.6")
+          .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Planner.Domain.Models.Customer", b =>
-                {
-                    b.Property<long>("EntityId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder.Entity("Planner.Domain.Models.Customer", b =>
+          {
+            b.Property<long>("EntityId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("bigint")
+                      .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Name")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EntityId");
+            b.HasKey("EntityId");
 
-                    b.ToTable("Customers");
+            b.ToTable("Customers");
 
-                    b.HasData(
-                        new
-                        {
-                            EntityId = 1L,
-                            Name = "Abdul-Rauf Yakubu"
-                        },
-                        new
-                        {
-                            EntityId = 2L,
-                            Name = "Daniel Henderson"
-                        },
-                        new
-                        {
-                            EntityId = 3L,
-                            Name = "Stanhope Nwosu"
-                        },
-                        new
-                        {
-                            EntityId = 4L,
-                            Name = "Fred Belotte"
-                        },
-                        new
-                        {
-                            EntityId = 5L,
-                            Name = "Azhya Knox"
-                        });
-                });
+            b.HasData(
+                      new
+                      {
+                        EntityId = 1L,
+                        Name = "Abdul-Rauf Yakubu"
+                      },
+                      new
+                      {
+                        EntityId = 2L,
+                        Name = "Daniel Henderson"
+                      },
+                      new
+                      {
+                        EntityId = 3L,
+                        Name = "Stanhope Nwosu"
+                      },
+                      new
+                      {
+                        EntityId = 4L,
+                        Name = "Fred Belotte"
+                      },
+                      new
+                      {
+                        EntityId = 5L,
+                        Name = "Azhya Knox"
+                      });
+          });
 
-            modelBuilder.Entity("Planner.Domain.Models.Event", b =>
-                {
-                    b.Property<long>("EntityId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder.Entity("Planner.Domain.Models.Event", b =>
+          {
+            b.Property<long>("EntityId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("bigint")
+                      .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Discription")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Discription")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
+            b.Property<DateTime>("EndDate")
+                      .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
+            b.Property<DateTime>("StartDate")
+                      .HasColumnType("datetime2");
 
-                    b.HasKey("EntityId");
+            b.HasKey("EntityId");
 
-                    b.ToTable("Events");
+            b.ToTable("Events");
 
-                    b.HasData(
-                        new
-                        {
-                            EntityId = 1L,
-                            Discription = "First event",
-                            EndDate = new DateTime(2021, 5, 24, 13, 14, 20, 481, DateTimeKind.Local).AddTicks(9360),
-                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 458, DateTimeKind.Local).AddTicks(8000)
-                        },
-                        new
-                        {
-                            EntityId = 2L,
-                            Discription = "Second event",
-                            EndDate = new DateTime(2021, 5, 24, 14, 14, 20, 482, DateTimeKind.Local).AddTicks(2670),
-                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2030)
-                        },
-                        new
-                        {
-                            EntityId = 3L,
-                            Discription = "Third event",
-                            EndDate = new DateTime(2021, 5, 24, 15, 14, 20, 482, DateTimeKind.Local).AddTicks(2700),
-                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2690)
-                        });
-                });
+            b.HasData(
+                      new
+                      {
+                        EntityId = 1L,
+                        Discription = "First event",
+                        EndDate = new DateTime(2021, 5, 24, 13, 14, 20, 481, DateTimeKind.Local).AddTicks(9360),
+                        StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 458, DateTimeKind.Local).AddTicks(8000)
+                      },
+                      new
+                      {
+                        EntityId = 2L,
+                        Discription = "Second event",
+                        EndDate = new DateTime(2021, 5, 24, 14, 14, 20, 482, DateTimeKind.Local).AddTicks(2670),
+                        StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2030)
+                      },
+                      new
+                      {
+                        EntityId = 3L,
+                        Discription = "Third event",
+                        EndDate = new DateTime(2021, 5, 24, 15, 14, 20, 482, DateTimeKind.Local).AddTicks(2700),
+                        StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2690)
+                      });
+          });
 
-            modelBuilder.Entity("Planner.Domain.Models.Location", b =>
-                {
-                    b.Property<long>("EntityId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+      modelBuilder.Entity("Planner.Domain.Models.Location", b =>
+          {
+            b.Property<long>("EntityId")
+                      .ValueGeneratedOnAdd()
+                      .HasColumnType("bigint")
+                      .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("City")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("State")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("State")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Street")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Street")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Zipcode")
-                        .HasColumnType("nvarchar(max)");
+            b.Property<string>("Zipcode")
+                      .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EntityId");
+            b.HasKey("EntityId");
 
-                    b.ToTable("Locations");
-                });
+            b.ToTable("Locations");
+          });
 #pragma warning restore 612, 618
-        }
     }
+  }
 }

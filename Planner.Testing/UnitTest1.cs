@@ -1,14 +1,14 @@
 using System;
 using Xunit;
 
-namespace Planner.Testing
+namespace CPlanner.Testing
 {
-    public class UnitTest1
+  public class UnitTest1
+  {
+    [Fact]
+    public void Test1()
     {
-        [Fact]
-        public void Test1()
-        {
 
-        }
     }
+  }
 }

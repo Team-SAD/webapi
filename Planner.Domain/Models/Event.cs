@@ -13,5 +13,9 @@ namespace Planner.Domain.Models
 
     // public Location Location { get; set; }
     // public long LocationId { get; set; }
+    public override string ToString()
+    {
+      return $"{Title}";
+    }
   }
 }

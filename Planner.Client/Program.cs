@@ -9,30 +9,30 @@ using Microsoft.Extensions.Logging;
 
 namespace Planner.Client
 {
-    public class Program
+  public class Program
+  {
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            // var host = new HostBuilder()
-            // .ConfigureAppConfiguration((hostContext, builder) =>
-            // {
-            //     // Add other providers for JSON, etc.
+      // var host = new HostBuilder()
+      // .ConfigureAppConfiguration((hostContext, builder) =>
+      // {
+      //     // Add other providers for JSON, etc.
 
-            //     if (hostContext.HostingEnvironment.IsDevelopment())
-            //     {
-            //         builder.AddUserSecrets<Program>();
-            //     }
-            // })
-            // .Build();
-            // host.Run();
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+      //     if (hostContext.HostingEnvironment.IsDevelopment())
+      //     {
+      //         builder.AddUserSecrets<Program>();
+      //     }
+      // })
+      // .Build();
+      // host.Run();
+      CreateHostBuilder(args).Build().Run();
     }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+              webBuilder.UseStartup<Startup>();
+            });
+  }
 }

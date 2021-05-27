@@ -4,21 +4,21 @@ using Planner.Storage;
 
 namespace Planner.Client.Controllers
 {
-    
-    public class EventController : ApiBaseController
-    {
-        private readonly UnitOfWork _unitOfWork;
-        public EventController(UnitOfWork unitOfWork)
-        {
-            _unitOfWork = unitOfWork;
-        }
 
-        [HttpGet]
-        public async Task<IActionResult> GetEvents()
-        {
-            var events = await _unitOfWork.Events.SelectEventsAsync();
-            return Ok(events);
-        }
-        
+  public class EventController : ApiBaseController
+  {
+    private readonly UnitOfWork _unitOfWork;
+    public EventController(UnitOfWork unitOfWork)
+    {
+      _unitOfWork = unitOfWork;
     }
+
+    [HttpGet]
+    public async Task<IActionResult> GetEvents()
+    {
+      var events = await _unitOfWork.Events.SelectEventsAsync();
+      return Ok(events);
+    }
+
+  }
 }

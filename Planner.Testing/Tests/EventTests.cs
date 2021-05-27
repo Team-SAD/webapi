@@ -1,10 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using Xunit;
-using Planner.Domain.Abstracts;
-using Planner.Domain.Interfaces;
 using Planner.Domain.Models;
 
 namespace Planner.Testing
@@ -22,8 +17,8 @@ namespace Planner.Testing
 
       ev1.Title = "Wake-up";
       ev1.Description = "Times time to wake up friend.";
-      ev1.StartDate = DateTime(2021, 10, 17, 8, 00, 00);
-      ev1.EndDate = DateTime(2021, 10, 17, 9, 00, 00);
+      ev1.StartDate = new DateTime(2021, 10, 17, 8, 00, 00);
+      ev1.EndDate = new DateTime(2021, 10, 17, 9, 00, 00);
 
       Assert.NotNull(ev1);
     }
@@ -36,7 +31,7 @@ namespace Planner.Testing
       var ev = new Event() { Title = eventName };
       Assert.NotNull(ev.Title);
       Assert.Equal(ev.Title, ev.ToString());
-      Assert.InRange(ev.Title.Length, 5, 25);
+      Assert.InRange(ev.Title.Length, MIN_LENGTH, MAX_LENGTH);
     }
 
     [Theory]
@@ -46,7 +41,7 @@ namespace Planner.Testing
     {
       Event ev1 = new Event() { Description = descrip };
       Assert.NotNull(ev1.Description);
-      Assert.InRange(ev1.Description.Length, 5, MAX_LENGTH);
+      Assert.InRange(ev1.Description.Length, MIN_LENGTH, MAX_LENGTH);
     }
     // End date cant before start date
     // Start date cannot be after end date
