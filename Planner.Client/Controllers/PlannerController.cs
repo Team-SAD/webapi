@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Planner.Client.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Planner.Storage;
 
@@ -17,7 +16,7 @@ namespace Planner.Client.Controllers
     [HttpGet]
     public async Task<IActionResult> GetPlanners()
     {
-      var planners = await _unitOfWork.Planners.SelectPlannersAsync();
+      var planners = await _unitOfWork.Plans.SelectPlannersAsync();
       return Ok(planners);
     }
 
