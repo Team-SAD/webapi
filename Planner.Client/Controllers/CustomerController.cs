@@ -15,14 +15,23 @@ namespace Planner.Client.Controllers
 
         }
 
-        [HttpGet]
+        [HttpGet("users")]
         public async Task<IActionResult> GetCustomers()
         {
-            var customers = await _unitOfWork.Customers.SelectCustomersAsync();
+            var customers = await _unitOfWork.AppUsers.SelectCustomersAsync();
 
             return Ok(customers);
         }
 
+        [HttpGet("user")]
+        public async Task<IActionResult> GetCustomerByName(string name)
+        {
+           var customer = await _unitOfWork.AppUsers.GetCustomerByName(name);
+
+            return Ok(customer);
+        }
+
+       
 
     }
 }

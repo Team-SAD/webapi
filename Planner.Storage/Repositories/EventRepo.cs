@@ -16,17 +16,54 @@ namespace Planner.Storage.Repositories
             _context = context;
         }
 
-        public void Create(Event entry)
+        
+        public async void Create(Event entry)
         {
-            throw new NotImplementedException();
+           
+            await _context.Events.AddAsync(entry);
         }
         public async Task<IEnumerable<Event>> SelectEventsAsync()
         {
             return await _context.Events.ToListAsync();
         }
-        public bool Delete()
+
+        public async Task<Event> SelectEventAsync(long? id)
         {
-            throw new NotImplementedException();
+            
+                return await _context.Events.FindAsync(id);
+        }
+        public async Task<bool> DeleteAsync(long id)
+        {
+            var ev = await _context.Events.FindAsync(id);
+            if (ev == null)
+            {
+                return false;
+            }
+
+            _context.Events.Remove(ev);
+            return true;
+        }
+
+        public async Task<Event> Update(Event ev)
+        {
+            var eventToUpdate = await _context.Events.FirstOrDefaultAsync(e => e.EntityId == ev.EntityId);
+
+            if (eventToUpdate != null) 
+            {
+                eventToUpdate.Description = ev.Description;
+                eventToUpdate.StartDate = ev.StartDate;
+                eventToUpdate.EndDate = ev.EndDate;
+                eventToUpdate.Location = ev.Location;
+                eventToUpdate.Title = ev.Title;
+                eventToUpdate.AppUser = ev.AppUser;
+            }
+            else
+            {
+                return ev;
+            }
+
+            return eventToUpdate;
+
         }
 
         public IEnumerable<Event> Read(Func<Event, bool> filter)
@@ -35,6 +72,11 @@ namespace Planner.Storage.Repositories
         }
 
         public Event Update()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete()
         {
             throw new NotImplementedException();
         }

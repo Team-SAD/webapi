@@ -15,6 +15,42 @@ namespace Planner.Storage.Repositories
         {
             _context = context;
         }
+        public async void CreateAsync(Location location)
+        {
+            await _context.Locations.AddAsync(location);
+        }
+        
+        public async Task<Location> UpdateAsync(Location location)
+        {
+            var locationToUpdate = await _context.Locations.FirstOrDefaultAsync(l => l.EntityId == location.EntityId);
+
+            if (locationToUpdate != null)
+            {
+                locationToUpdate.Street = location.Street;
+                locationToUpdate.City = location.City;
+                locationToUpdate.State = location.State;
+                locationToUpdate.Zipcode = location.Zipcode;
+            }
+            else
+            {
+                return location;
+            }
+
+            return locationToUpdate;
+
+        }
+        
+        public async Task<bool> DeleteAsync(long id)
+        {
+            var location = await _context.Locations.FindAsync(id);
+            if (location == null)
+            {
+                return false;
+            }
+
+            _context.Locations.Remove(location);
+            return true;
+        }
 
         public  void Create(Location entry)
         {

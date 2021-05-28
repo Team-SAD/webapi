@@ -50,7 +50,7 @@ namespace Planner.Client
             });
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Planner.Cient", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Planner.Client", Version = "v1" });
             });
         }
 
@@ -61,7 +61,7 @@ namespace Planner.Client
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Planner.Cient v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Planner.Client v1"));
             }
 
             app.UseHttpsRedirection();

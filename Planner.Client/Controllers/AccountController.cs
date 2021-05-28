@@ -20,19 +20,19 @@ namespace Planner.Client.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<Customer>> Register(RegisterDto registerDto)
+        public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
         {
-            var user = new Customer() { Name = registerDto.Name };
-            _unitOf.Customers.Create(user);
+            var user = new AppUser() { Name = registerDto.Name };
+            _unitOf.AppUsers.Create(user);
             await _unitOf.Save();
             return user;
 
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<Customer>> Login(LoginDto loginDto)
+        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
         {
-            var user = await _unitOf.Customers.GetCustomerByName(loginDto.Name);
+            var user = await _unitOf.AppUsers.GetCustomerByName(loginDto.Name);
 
             if(user == null) return Unauthorized("Invalid User");
 

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Planner.Domain.Abstracts;
 
 namespace Planner.Domain.Models
@@ -8,5 +10,13 @@ namespace Planner.Domain.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Zipcode { get; set; }
+
+        public ICollection<Event> Events { get; set; }
+       
+
+        public override string ToString()
+        {
+            return $"{Street}, {City}, {State} {Zipcode}";
+        }
     }
 }

@@ -19,44 +19,52 @@ namespace Planner.Storage.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Planner.Domain.Models.Customer", b =>
+            modelBuilder.Entity("Planner.Domain.Models.AppUser", b =>
                 {
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long>("EventId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EntityId");
 
-                    b.ToTable("Customers");
+                    b.ToTable("AppUsers");
 
                     b.HasData(
                         new
                         {
                             EntityId = 1L,
+                            EventId = 0L,
                             Name = "Abdul-Rauf Yakubu"
                         },
                         new
                         {
                             EntityId = 2L,
+                            EventId = 0L,
                             Name = "Daniel Henderson"
                         },
                         new
                         {
                             EntityId = 3L,
+                            EventId = 0L,
                             Name = "Stanhope Nwosu"
                         },
                         new
                         {
                             EntityId = 4L,
+                            EventId = 0L,
                             Name = "Fred Belotte"
                         },
                         new
                         {
                             EntityId = 5L,
+                            EventId = 0L,
                             Name = "Azhya Knox"
                         });
                 });
@@ -68,16 +76,29 @@ namespace Planner.Storage.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Discription")
+                    b.Property<long?>("AppUserEntityId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<long?>("LocationEntityId")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("EntityId");
+
+                    b.HasIndex("AppUserEntityId");
+
+                    b.HasIndex("LocationEntityId");
 
                     b.ToTable("Events");
 
@@ -85,23 +106,26 @@ namespace Planner.Storage.Migrations
                         new
                         {
                             EntityId = 1L,
-                            Discription = "First event",
-                            EndDate = new DateTime(2021, 5, 24, 13, 14, 20, 481, DateTimeKind.Local).AddTicks(9360),
-                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 458, DateTimeKind.Local).AddTicks(8000)
+                            Description = "First event",
+                            EndDate = new DateTime(2021, 5, 28, 10, 44, 11, 523, DateTimeKind.Local).AddTicks(3230),
+                            StartDate = new DateTime(2021, 5, 28, 9, 44, 11, 501, DateTimeKind.Local).AddTicks(5030),
+                            Title = "Title 1"
                         },
                         new
                         {
                             EntityId = 2L,
-                            Discription = "Second event",
-                            EndDate = new DateTime(2021, 5, 24, 14, 14, 20, 482, DateTimeKind.Local).AddTicks(2670),
-                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2030)
+                            Description = "Second event",
+                            EndDate = new DateTime(2021, 5, 28, 11, 44, 11, 523, DateTimeKind.Local).AddTicks(7110),
+                            StartDate = new DateTime(2021, 5, 28, 9, 44, 11, 523, DateTimeKind.Local).AddTicks(6610),
+                            Title = "Title 2"
                         },
                         new
                         {
                             EntityId = 3L,
-                            Discription = "Third event",
-                            EndDate = new DateTime(2021, 5, 24, 15, 14, 20, 482, DateTimeKind.Local).AddTicks(2700),
-                            StartDate = new DateTime(2021, 5, 24, 12, 14, 20, 482, DateTimeKind.Local).AddTicks(2690)
+                            Description = "Third event",
+                            EndDate = new DateTime(2021, 5, 28, 12, 44, 11, 523, DateTimeKind.Local).AddTicks(7260),
+                            StartDate = new DateTime(2021, 5, 28, 9, 44, 11, 523, DateTimeKind.Local).AddTicks(7250),
+                            Title = "Title 3"
                         });
                 });
 
@@ -127,6 +151,57 @@ namespace Planner.Storage.Migrations
                     b.HasKey("EntityId");
 
                     b.ToTable("Locations");
+
+                    b.HasData(
+                        new
+                        {
+                            EntityId = 1L,
+                            City = "City 1",
+                            State = "State 1",
+                            Street = "Street 1",
+                            Zipcode = "45623"
+                        },
+                        new
+                        {
+                            EntityId = 2L,
+                            City = "City 2",
+                            State = "State 2",
+                            Street = "Street 2",
+                            Zipcode = "45643"
+                        },
+                        new
+                        {
+                            EntityId = 3L,
+                            City = "City ",
+                            State = "State 3",
+                            Street = "Street 3",
+                            Zipcode = "45643"
+                        });
+                });
+
+            modelBuilder.Entity("Planner.Domain.Models.Event", b =>
+                {
+                    b.HasOne("Planner.Domain.Models.AppUser", "AppUser")
+                        .WithMany("Events")
+                        .HasForeignKey("AppUserEntityId");
+
+                    b.HasOne("Planner.Domain.Models.Location", "Location")
+                        .WithMany("Events")
+                        .HasForeignKey("LocationEntityId");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("Planner.Domain.Models.AppUser", b =>
+                {
+                    b.Navigation("Events");
+                });
+
+            modelBuilder.Entity("Planner.Domain.Models.Location", b =>
+                {
+                    b.Navigation("Events");
                 });
 #pragma warning restore 612, 618
         }

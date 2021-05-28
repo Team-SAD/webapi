@@ -6,7 +6,7 @@ namespace Planner.Storage
     public class UnitOfWork
     {
          private readonly CPContext _context;
-        public CustomerRepo Customers { get; set; }
+        public AppUserRepo AppUsers { get; set; }
         public EventRepo Events { get; set; }
         public LocationRepo Locations { get; set; }
         
@@ -16,7 +16,7 @@ namespace Planner.Storage
         {
             _context = context;
 
-            Customers = new CustomerRepo(_context);
+            AppUsers = new AppUserRepo(_context);
             Events = new EventRepo(_context);
             Locations = new LocationRepo(_context);
         }
