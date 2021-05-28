@@ -20,8 +20,9 @@ namespace Planner.Storage
         builder.Entity<AppUser>().HasKey(e => e.EntityId);
         builder.Entity<Event>().HasKey(e => e.EntityId);
         builder.Entity<Location>().HasKey(e => e.EntityId);
+        builder.Entity<Plan>().HasKey(e => e.EntityId);
 
-        OnModelSeeding(builder);
+         OnModelSeeding(builder);
         }
 
         private static void OnModelSeeding(ModelBuilder builder)

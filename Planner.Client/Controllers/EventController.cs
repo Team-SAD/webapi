@@ -16,8 +16,9 @@ namespace Planner.Client.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+       
 
-        [HttpGet]
+        [HttpGet("events")]
         public async Task<IActionResult> GetEvents()
         {
             var events = await _unitOfWork.Events.SelectEventsAsync();

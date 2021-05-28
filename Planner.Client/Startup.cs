@@ -45,8 +45,8 @@ namespace Planner.Client
             services.AddControllers();
             services.AddDbContext<CPContext>(options =>
             {
-                //options.UseNpgsql(Configuration.GetConnectionString("pgsql"));
-                options.UseSqlServer(Configuration.GetConnectionString("mssql"));
+                options.UseNpgsql(Configuration.GetConnectionString("pgsql"));
+                //options.UseSqlServer(Configuration.GetConnectionString("mssql"));
             });
             services.AddSwaggerGen(c =>
             {
